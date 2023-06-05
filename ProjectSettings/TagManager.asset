@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Trigger
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background5
+    uniqueID: 2657905003
+    locked: 0
+  - name: Background4
+    uniqueID: 3282414015
+    locked: 0
+  - name: Background3
+    uniqueID: 3441769329
+    locked: 0
+  - name: Background2
+    uniqueID: 926855735
+    locked: 0
+  - name: Background1
+    uniqueID: 2851068063
+    locked: 0
+  - name: Background
+    uniqueID: 3045988261
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3022035947
+    locked: 0
+  - name: Foreground
+    uniqueID: 1655469793
+    locked: 0
