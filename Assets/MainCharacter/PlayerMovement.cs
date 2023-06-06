@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update() 
     {
         bool isGrounded = IsOnGround();
+        
         if(!disabled)
         {
                 #region Jump
@@ -153,14 +154,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsOnGround()
     {
-        /*if(Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer))
+        if(Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer))
         {
             IsJumping = false;
             return true;
         }
         else
-            return false;*/
-        Collider[] hitColliders = Physics.OverlapSphere(groundCheckPoint.position, 0.1f);
+            return false;
+        /*Collider[] hitColliders = Physics.OverlapSphere(groundCheckPoint.position, 0.1f);
         foreach (var hitCollider in hitColliders)
         {
             if(hitCollider.gameObject.tag == "Ground")
@@ -169,7 +170,8 @@ public class PlayerMovement : MonoBehaviour
                 return true;
             }
         }
-        return false;
+        
+        return false;*/
     }
     
     	private void Flip()
