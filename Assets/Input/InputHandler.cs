@@ -7,9 +7,11 @@ public class InputHandler : MonoBehaviour
     // Start is called before the first frame update
 
     private Camera mainCamera;
-
+    
+    [SerializeField] private float maxActionDistance;
     private void Awake()
     {
+        //player = gameObject;
         mainCamera = Camera.main;
     }
 
@@ -24,7 +26,14 @@ public class InputHandler : MonoBehaviour
         //rayHit.collider.transform.parent.gameObject.GetComponent<InteractableObject>().activateTrigger();
         Debug.Log(rayHit.collider.name);
         InteractableObject script = rayHit.collider.gameObject.GetComponent<InteractableObject>();
-        if(script != null) script.activateTrigger();
+
+        Vector3 itemPos = rayHit.transform.position;
+        Vector3 playerPos = gameObject.transform.position;//player.transform.position;
+        float distance = Vector3.Distance(itemPos, playerPos);
+
+        Debug.Log(distance);
+
+        if(script != null && distance <= maxActionDistance) script.activateTrigger();
         //Debug.Log(rayHit.collider.gameObject.name);
     }
 }
