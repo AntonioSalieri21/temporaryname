@@ -31,12 +31,7 @@ public class UniversalTriggerCode : MonoBehaviour
                 wasTriggered = true;
             }
             onTrigger.Invoke();
-
+            Debug.Log(index);
         }
-    }
-
-    public void DebugPrint()
-    {
-        Debug.Log(index);
     }
 }

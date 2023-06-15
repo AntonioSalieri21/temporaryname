@@ -13,16 +13,28 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
 
     public Animator animator;
+    Dialogue[] innerDialogues;
+    private int dialogueIndex = 0;
 
-    void Start()
+    public void StartDialogue(Dialogue[] dialogues)
     {
+
+        animator.SetBool("Active", true);
         sentences = new Queue<string>();
+        sentences.Clear();
+        innerDialogues = dialogues;
+        ContinueDialogue();
+
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    private void ContinueDialogue()
     {
-        animator.SetBool("Active", true);
-        sentences.Clear();
+        Debug.Log("DialogueIndex = " + dialogueIndex + "   innerDialogues.Length = " + (innerDialogues.Length-1));
+        if(dialogueIndex > innerDialogues.Length-1) {EndDialogue(); return;}
+        
+        Dialogue dialogue = innerDialogues[dialogueIndex];
+        
+
         nameText.text = dialogue.person.p_name;
         image.sprite = dialogue.person.p_image;       
         foreach(string sentence in dialogue.sentences)
@@ -30,14 +42,12 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
-
-
     }
 
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0){EndDialogue(); return;}
+        if(sentences.Count == 0){dialogueIndex++; ContinueDialogue(); return;}
 
         string sentence = sentences.Dequeue();
 
@@ -62,5 +72,6 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("Active", false);
         dialogueText.text = "";
         nameText.text = "";
+        dialogueIndex = 0;
     }
 }
