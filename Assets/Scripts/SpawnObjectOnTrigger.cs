@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class SpawnObjectOnTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject actor;
+    [SerializeField]
+    private Vector3 pos;
 
-    // Update is called once per frame
-    void Update()
+    public void spawn()
     {
-        
+        Instantiate(actor, pos, Quaternion.identity);
     }
 }

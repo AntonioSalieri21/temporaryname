@@ -29,6 +29,9 @@ public class InputHandler : MonoBehaviour
 
         Vector3 itemPos = rayHit.transform.position;
         Vector3 playerPos = gameObject.transform.position;//player.transform.position;
+
+        itemPos.z = 0;
+        playerPos.z = 0;
         float distance = Vector3.Distance(itemPos, playerPos);
 
         Debug.Log(distance);
