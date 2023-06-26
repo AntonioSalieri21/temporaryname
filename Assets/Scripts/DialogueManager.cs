@@ -13,7 +13,12 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
 
     public Animator animator;
-    Dialogue[] innerDialogues;
+
+    [Header("Settings")]
+    [Range(0.01f, 0.1f)]
+    [SerializeField] private float textPrintDelay = 0.05f; 
+
+    private Dialogue[] innerDialogues;
     private int dialogueIndex = 0;
 
     public void StartDialogue(Dialogue[] dialogues)
@@ -27,16 +32,22 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void ContinueDialogue()
+    public void ContinueDialogue()
     {
-        Debug.Log("DialogueIndex = " + dialogueIndex + "   innerDialogues.Length = " + (innerDialogues.Length-1));
+        Debug.Log("DialogueIndex = " + dialogueIndex + "   innerDialogues.Length = " + (innerDialogues.Length));
+        
         if(dialogueIndex > innerDialogues.Length-1) {EndDialogue(); return;}
         
         Dialogue dialogue = innerDialogues[dialogueIndex];
         
 
         nameText.text = dialogue.person.p_name;
-        image.sprite = dialogue.person.p_image;       
+        if(dialogue.person.p_image != null)
+        {
+            image.enabled = true;
+            image.sprite = dialogue.person.p_image;
+        }
+               
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -48,7 +59,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         if(sentences.Count == 0){dialogueIndex++; ContinueDialogue(); return;}
-
+        Debug.Log(sentences.Count);
         string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
@@ -62,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(textPrintDelay);
         }
 
     }
@@ -73,5 +84,6 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         nameText.text = "";
         dialogueIndex = 0;
+        image.enabled = false;
     }
 }

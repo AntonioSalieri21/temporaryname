@@ -12,15 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Bar.unity
     guid: 841d531cb52b161409dc11a2d7a31bb5
   - enabled: 1
-    path: Assets/Scenes/PrototypeScenes/TimePrototypes/TP_S1/TP_S1.unity
+    path: Assets/Scenes/PrototypeScenes/TimePrototypes/TP_S1/TP_S1_0.unity
     guid: c58f678e1edc0d74890ebb830b459b9e
   - enabled: 1
-    path: Assets/Scenes/PrototypeScenes/TimePrototypes/TP_S1/TP_S1_P.unity
-    guid: fa3b300c54bc062408594069666f9026
-  - enabled: 1
-    path: Assets/Scenes/PrototypeScenes/TimePrototypes/TP_S2/TP_S2.unity
-    guid: b52c99a1510261e45a3e109de9f7dcc0
-  - enabled: 1
-    path: Assets/Scenes/PrototypeScenes/TimePrototypes/TP_S2/TP_S2_P.unity
-    guid: 42e7a035fcec918438cd2a2081c8af96
+    path: Assets/Scenes/PrototypeScenes/TimePrototypes/TP_S1/TP_S1_1.unity
+    guid: 1d9811e47fe682b47b9cb76d1dfee8d9
   m_configObjects: {}

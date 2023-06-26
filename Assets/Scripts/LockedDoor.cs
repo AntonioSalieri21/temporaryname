@@ -10,6 +10,7 @@ public class LockedDoor : MonoBehaviour
     public AudioSource audioSource;
 
     public AudioClip lockedDoorSound;
+    public void unlockDoor(){isLocked = false;}
     public void openDoor()
     {
         if(!isLocked)

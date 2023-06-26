@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f5843680b2c9874eaafc2ae6d27d23b, type: 3}
-  m_Name: RhysDullknife
+  m_Name: Note
   m_EditorClassIdentifier: 
-  p_name: Rhys Dullknife
+  p_name: "\u0417\u0430\u043F\u0438\u0441\u043A\u0430"
   p_image: {fileID: 0}
