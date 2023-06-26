@@ -32,6 +32,7 @@ public class UniversalTriggerCode : MonoBehaviour
             }
             onTrigger.Invoke();
             Debug.Log(index);
+            Destroy(GetComponent<BoxCollider2D>());
         }
     }
 }
